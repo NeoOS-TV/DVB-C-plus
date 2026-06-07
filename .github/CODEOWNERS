@@ -1,0 +1,9 @@
+# Global owners for the entire repository (Full Admins)
+* @NeoOS-TV
+
+# Specific protections for core components
+/src/kernel/ @NeoOS-TV
+/system/ @NeoOS-TV
+
+# Individual user log folders (will be expanded automatically by the workflow)
+/users/NeoAudio/ @NeoAudio
