@@ -9,7 +9,7 @@ const translations = {
         "charta-tv-allow": "Erlaubt (Klassische TV-Werbung):",
         "charta-tv-allow-desc": "Traditionelle Werbeblöcke im linearen Videostream der Sender sind vollumfänglich erlaubt.",
         "charta-app-allow": "Erlaubt (Moderate App- & OmniView-Werbung):",
-        "charta-app-allow-desc": "Innerhalb globaler Apps (.hap) und dem OmniView-Interface (.oip) is Werbung in moderaten Mengen gestattet.",
+        "charta-app-allow-desc": "Innerhalb globaler Apps (.hap) und dem OmniView-Interface (.oip) ist Werbung in moderaten Mengen gestattet.",
         "charta-forbidden": "Strengstens verboten (Tracker & Werbe-Spam):",
         "charta-forbidden-desc": "Jegliche Form von unsichtbaren Trackern zur Datensammlung ist verboten.",
         "charta-no-ai": "Kein AI-Slop:",
@@ -99,7 +99,25 @@ const translations = {
         "run-step3": "Internet-Sperre: Fehlende Netzwerke erzwingen den kontrollierten Verbindungsabbruch.",
         "run-step4": "Rendering: Hardwarebeschleunigtes Rendering bei stabilen 60 Bildern pro Sekunde.",
         "run-hw-title": "Off-the-Shelf Hardware-Empfehlung",
-        "run-hw-desc": "Vu+ Ultimo 4K: Die Premium-Wahl wegen der massiven FBC-Tuner-Architektur."
+        "run-hw-desc": "Vu+ Ultimo 4K: Die Premium-Wahl wegen der massiven FBC-Tuner-Architektur.",
+
+        /* NEW MODAL TRANSLATIONS (DE) */
+        "pop-title": "Anleitung zur GitHub-Mitarbeit (Contribution)",
+        "pop-lead": "Bevor du loslegst, beachte bitte unsere zentralen Kernkompetenzen und technologischen Grundlagen.",
+        "pop-req-title": "1. Was wir voraussetzen",
+        "pop-req-desc": "Da Holo+ OS tief im hardwarenahen Bereich agiert, solltest du fundierte Kenntnisse in folgenden Domänen mitbringen:",
+        "pop-req-li1": "Linux-Basis: Sicherer Umgang mit Systemarchitekturen, Build-Pipelines und Daemons.",
+        "pop-req-li2": "Kernel-Entwicklung: Treiberanpassung, Speicherverwaltung und Scheduler-Optimierung.",
+        "pop-req-li3": "Code-Standards: Modularer, hochoptimierter und dokumentierter Systemcode.",
+        "pop-ideas-title": "2. Entwickler-Manifest & Projektideen",
+        "pop-ideas-desc": "Alle aktuellen Anforderungen, detaillierten Konzepte und wichtigen Meilensteine findest du direkt im Hauptverzeichnis des Repositories in der Datei:",
+        "pop-struct-title": "3. Strukturierte Einreichung",
+        "pop-struct-desc": "Achte penibel darauf, deine Daten gemäss der standardisierten Ordnerstrukturen einzureichen. Beachte hierzu die oben abgebildeten Blueprints für .oip-Interfaces (Kapitel 5) und .hap-Anwendungen (Kapitel 6).",
+        "pop-contact-title": "4. Direktkontakt & Support",
+        "pop-contact-desc": "Hast du komplexe Fragen zur Implementierung oder Architektur? Du erreichst den Kern-Maintainer jederzeit unter:",
+        "pop-wf-title": "GitHub-Workflow Kurzform",
+        "pop-wf-desc": "Repository forken -> Branch erstellen -> Änderungen committen -> Pull Request (PR) einreichen.",
+        "pop-btn-go": "Weiter zu GitHub & Forken"
     },
     en: {
         "hero-title": "DVB-C+ & Holo+ OS: Full Specification",
@@ -141,7 +159,6 @@ const translations = {
         "cert-hsc": "512 chars. Enforced requirement for low-level system services.",
         "cert-code-title": "Syntax Architecture of a Certificate File",
         
-        /* Blueprint Syntax Strings EN */
         "bp-comment-1": "#Holo+ Application/OmniView/System Certificate",
         "bp-comment-2": "#Distributed by NeoAudio on the 1st of June 2026 (valid for 4 years)",
         "bp-comment-3": "#Certificate Key:",
@@ -201,7 +218,25 @@ const translations = {
         "run-step3": "Network Verification: Missing target connections trigger immediate structural termination.",
         "run-step4": "Overlay Rendering: Stable UI frame compositing locked at a 60 FPS output matrix.",
         "run-hw-title": "Off-the-Shelf Reference Implementations",
-        "run-hw-desc": "Vu+ Ultimo 4K: The base baseline choice featuring proper high tier tuner components."
+        "run-hw-desc": "Vu+ Ultimo 4K: The base baseline choice featuring proper high tier tuner components.",
+
+        /* NEW MODAL TRANSLATIONS (EN) */
+        "pop-title": "GitHub Contribution Guidelines",
+        "pop-lead": "Before getting started, please check our essential stack requirements and architecture base.",
+        "pop-req-title": "1. Prerequisites",
+        "pop-req-desc": "Since Holo+ OS targets bare-metal components, you should be familiar with the following domains:",
+        "pop-req-li1": "Linux Fundamentals: Confident handling of environments, build systems, and system daemons.",
+        "pop-req-li2": "Kernel Development: Device tree structures, low-level modules, and scheduling tasks.",
+        "pop-req-li3": "Code Specifications: Highly efficient, secure, and clean architecture profiles.",
+        "pop-ideas-title": "2. Developer Manifest & Future Milestones",
+        "pop-ideas-desc": "All current issues, concept descriptions, and essential architectural rules are tracked inside the main branch within:",
+        "pop-struct-title": "3. Directory Structure Compliance",
+        "pop-struct-desc": "Please make sure your data exactly matches our standardized platform trees. Refer to the structural blueprints provided above for .oip overlays (Chapter 5) and standalone .hap apps (Chapter 6).",
+        "pop-contact-title": "4. Direct Contact Channels",
+        "pop-contact-desc": "Need hardware specifications or core debugging answers? Connect with the main maintainer at:",
+        "pop-wf-title": "GitHub Workflow Summary",
+        "pop-wf-desc": "Fork repository -> Create dedicated branch -> Commit assets -> Open Pull Request (PR).",
+        "pop-btn-go": "Proceed to GitHub & Fork"
     },
     nl: {
         "hero-title": "DVB-C+ & Holo+ OS: Volledige Specificatie",
@@ -243,7 +278,6 @@ const translations = {
         "cert-hsc": "512 tekens. Verplicht voor systeemdiensten met diepe rechten.",
         "cert-code-title": "Syntaxstructuur van een Certificaatbestand",
         
-        /* Blueprint Syntax Strings NL */
         "bp-comment-1": "#Holo+ Applicatie/OmniView/Systeem Certificaat",
         "bp-comment-2": "#Gedistribueerd door NeoAudio op 1 juni 2026 (4 jaar geldig)",
         "bp-comment-3": "#Certificaatsleutel:",
@@ -303,10 +337,52 @@ const translations = {
         "run-step3": "Internetblokkade: Het ontbreken van verbindingen breekt processen direct af.",
         "run-step4": "Rendering: Hardware-versnelde overlay weergave stabiel op 60 FPS.",
         "run-hw-title": "Off-the-Shelf Hardware-aanbeveling",
-        "run-hw-desc": "Vu+ Ultimo 4K: De premium hardware keuze voorzien van geavanceerde tuners."
+        "run-hw-desc": "Vu+ Ultimo 4K: De premium hardware keuze voorzien van geavanceerde tuners.",
+
+        /* NEW MODAL TRANSLATIONS (NL) */
+        "pop-title": "GitHub Richtlijnen voor Bijdragen",
+        "pop-lead": "Voordat u begint, moet u rekening houden met onze belangrijkste technologische grondbeginselen.",
+        "pop-req-title": "1. Vereisten",
+        "pop-req-desc": "Aangezien Holo+ OS dicht bij de hardware opereert, moet u over gedegen kennis beschikken op de volgende gebieden:",
+        "pop-req-li1": "Linux-basis: Veilige omgang met systeemarchitecturen, build-pipelines en daemons.",
+        "pop-req-li2": "Kernelontwikkeling: Optimalisatie van drivers, geheugenbeheer en schedulers.",
+        "pop-req-li3": "Code-standaarden: Modulaire, sterk geoptimaliseerde en gedocumenteerde systeemcode.",
+        "pop-ideas-title": "2. Ontwikkelaarsmanifest & Projectideeën",
+        "pop-ideas-desc": "Alle actuele vereisten, gedetailleerde concepten en belangrijke mijlpalen zijn direct te vinden in de hoofdmap van de repository in het bestand:",
+        "pop-struct-title": "3. Gestructureerde Inzending",
+        "pop-struct-desc": "Zorg ervoor dat uw gegevens strikt volgens de gestandaardiseerde mappenstructuur worden ingediend. Zie hiervoor de hierboven getoonde blauwdrukken voor .oip-interfaces (Hoofdstuk 5) en .hap-applicaties (Hoofdstuk 6).",
+        "pop-contact-title": "4. Direct Contact & Ondersteuning",
+        "pop-contact-desc": "Heeft u complexe vragen over de implementatie of architectuur? U kunt de hoofdbeheerder altijd bereiken via:",
+        "pop-wf-title": "GitHub Workflow in het kort",
+        "pop-wf-desc": "Repository forken -> Branch aanmaken -> Wijzigingen committen -> Pull Request (PR) indienen.",
+        "pop-btn-go": "Ga verder naar GitHub & Fork"
     }
 };
 
+// LOGIK FÜR DAS MODAL (POPUP)
+const modal = document.getElementById('contribModal');
+const openModalBtn = document.getElementById('openContribModal');
+const closeModalBtn = document.getElementById('closeContribModal');
+
+openModalBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Verhindert Scrollen im Hintergrund
+});
+
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+// Schliessen, wenn man ausserhalb des Fensters klickt
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// SPRACHWÄHLER LOGIK
 document.getElementById('langSwitch').addEventListener('change', (e) => {
     switchLanguage(e.target.value);
 });
