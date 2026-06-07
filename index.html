@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DVB-C+ & Holo+ OS Docs</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2 family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -31,7 +31,9 @@
 
     <main class="main-container">
         <section class="hero card">
-            <div class="badge">v2.7.0</div>
+            <div class="badge">
+                <span class="material-symbols-outlined text-icon">new_releases</span> v2.7.0
+            </div>
             <h1 data-i18n="hero-title">DVB-C+ & Holo+ OS: Gesamtspezifikation</h1>
             <p data-i18n="hero-desc">Das Betriebssystem Holo+ bildet die native Schnittstellenplattform für das hybride Kabelsystem DVB-C+. Es regelt die hardwarebeschleunigte Dekodierung hochbitratiger Medienströme, die Ausführung von sendereigenen interaktiven Overlays (OmniView) sowie globalen Systemapplikationen (Apps). Das System trennt zwischen isolierten Broadcast-Erweiterungen und tief integrierten Systemdiensten über ein proprietäres, mehrstufiges Sicherheits- und Zertifikatsmodell.</p>
         </section>
@@ -79,8 +81,8 @@
                 <li>
                     <strong data-i18n="hw-scaler">Der Native Retro-Upscaler:</strong> <span data-i18n="hw-scaler-desc">Für analoge Signale und digitale Streams mit einer Auflösung von 480p und weniger (z. B. VHS-Videorekorder, Röhren-Konsolen) besitzt Holo+ einen dedizierten, hardwarebeschleunigten Upscaler.</span>
                     <div class="nested-info">
-                        <p><span class="material-symbols-outlined inline-icon accent">lightbulb</span> <em><span data-i18n="hw-scaler-func">Funktionsweise:</span></em> <span data-i18n="hw-scaler-func-desc">Nutzt einen präzisen Integer-Scaling-Algorithmus (Pixel-Perfect-Modus) kombiniert mit einer optionalen, zuschaltbaren Scanline-Simulation, um Unschärfe-Artefakte moderner Panels zu eliminieren.</span></p>
-                        <p><span class="material-symbols-outlined inline-icon warning-text">warning</span> <em><span data-i18n="hw-scaler-req">Hardware-Voraussetzung:</span></em> <span data-i18n="hw-scaler-req-desc">Dieses Feature wird nur auf Receivern mit ausreichender GPU-Rechenleistung freigeschaltet.</span></p>
+                        <p><span class="material-symbols-outlined text-icon">info</span> <em><span data-i18n="hw-scaler-func">Funktionsweise:</span></em> <span data-i18n="hw-scaler-func-desc">Nutzt einen präzisen Integer-Scaling-Algorithmus (Pixel-Perfect-Modus) kombiniert mit einer optionalen, zuschaltbaren Scanline-Simulation, um Unschärfe-Artefakte moderner Panels zu eliminieren.</span></p>
+                        <p><span class="material-symbols-outlined text-icon">warning</span> <em><span data-i18n="hw-scaler-req">Hardware-Voraussetzung:</span></em> <span data-i18n="hw-scaler-req-desc">Dieses Feature wird nur auf Receivern mit ausreichender GPU-Rechenleistung freigeschaltet.</span></p>
                     </div>
                 </li>
             </ul>
@@ -99,26 +101,42 @@
             <h2><span class="material-symbols-outlined icon">badge</span> <span data-i18n="cert-title">4. Sicherheits- & Zertifikats-Struktur</span></h2>
             <p data-i18n="cert-desc">Zertifikate sind UTF-8-kodierte Textdateien, die das OS in numerische Werte auflöst:</p>
             <div class="grid-3">
-                <div class="grid-item"><h3>.hoc</h3><p data-i18n="cert-hoc">256 Zeichen. Für sendergebundene .oip-Interfaces.</p></div>
-                <div class="grid-item"><h3>.hac</h3><p data-i18n="cert-hac">256 Zeichen. Für globale Apps (.hap).</p></div>
-                <div class="grid-item"><h3>.hsc</h3><p data-i18n="cert-hsc">512 Zeichen. Zwingend erforderlich für System-Services mit tiefen Rechten.</p></div>
+                <div class="grid-item">
+                    <h3><span class="material-symbols-outlined text-icon">shield_heart</span> .hoc</h3>
+                    <p data-i18n="cert-hoc">256 Zeichen. Für sendergebundene .oip-Interfaces.</p>
+                </div>
+                <div class="grid-item">
+                    <h3><span class="material-symbols-outlined text-icon">token</span> .hac</h3>
+                    <p data-i18n="cert-hac">256 Zeichen. Für globale Apps (.hap).</p>
+                </div>
+                <div class="grid-item">
+                    <h3><span class="material-symbols-outlined text-icon">admin_panel_settings</span> .hsc</h3>
+                    <p data-i18n="cert-hsc">512 Zeichen. Zwingend erforderlich für System-Services mit tiefen Rechten.</p>
+                </div>
             </div>
 
             <h3 class="sub-title" data-i18n="cert-code-title">Syntax-Aufbau einer Zertifikatsdatei</h3>
-            <pre><code>#Holo+ Application/OmniView/System Certificate
-#Distributed by NeoAudio on the 1st of June 2026 (gültig 4 Jahre)
+            <div class="code-block-mock">
+                <div class="code-line comment"><span class="material-symbols-outlined code-icon">comment</span>#Holo+ Application/OmniView/System Certificate</div>
+                <div class="code-line comment"><span class="material-symbols-outlined code-icon">comment</span>#Distributed by NeoAudio on the 1st of June 2026 (gültig 4 Jahre)</div>
+                <div class="code-line"></div>
+                <div class="code-line comment"><span class="material-symbols-outlined code-icon">comment</span>#Certificate Key:</div>
+                <div class="code-line key-line">
+                    <span class="material-symbols-outlined marker-icon">start</span>¡<span class="key-string">[256/512 Zeichen Schlüssel]</span>!<span class="material-symbols-outlined marker-icon">output</span>
+                </div>
+                <div class="code-line"></div>
+                <div class="code-line comment"><span class="material-symbols-outlined code-icon">comment</span>#Checksum:</div>
+                <div class="code-line key-line">
+                    <span class="material-symbols-outlined marker-icon">start</span>¡<span class="key-string">[32 Zeichen Zahl, mathematische Formel]</span>!<span class="material-symbols-outlined marker-icon">output</span>
+                </div>
+            </div>
 
-#Certificate Key:
-¡[256/512 Zeichen Schlüssel]!
-
-#Checksum:
-¡[32 Zeichen Zahl, mathematische Formel]!</code></pre>
             <div class="nested-info">
-                <p><span class="material-symbols-outlined inline-icon accent">lightbulb</span> <strong data-i18n="cert-marker">Parser-Mechanik:</strong> <span data-i18n="cert-marker-desc">Das invertierte Ausrufezeichen <code>¡</code> dient dem OS-Kernel als absoluter Startpunkt für das Einlesen der Sicherheitsblöcke. Das standardmäßige <code>!</code> fungiert als Endpunkt. Alle Zeilen, die mit <code>#</code> beginnen, werden als Kommentar ignoriert.</span></p>
+                <p><span class="material-symbols-outlined text-icon">terminal</span> <strong data-i18n="cert-marker">Parser-Mechanik:</strong> <span data-i18n="cert-marker-desc">Das invertierte Ausrufezeichen ¡ dient dem OS-Kernel als absoluter Startpunkt für das Einlesen der Sicherheitsblöcke. Das standardmäßige ! fungiert als Endpunkt. Alle Zeilen, die mit # beginnen, werden als Kommentar ignoriert.</span></p>
             </div>
 
             <div class="callout alert">
-                <h4 data-i18n="cert-dev-title">Der Development-Modus (Unsigniert)</h4>
+                <h4><span class="material-symbols-outlined">report_problem</span> <span data-i18n="cert-dev-title">Der Development-Modus (Unsigniert)</span></h4>
                 <p data-i18n="cert-dev-desc">Software ohne gültiges Zertifikat läuft in einer Sandbox ohne Systemzugriff, zeigt vor dem Start eine Warnung und trägt ein permanentes, transparentes Branding-Badge („Development OmniView Interface“ bzw. „Development Holo+ App“).</p>
             </div>
         </section>
@@ -126,22 +144,24 @@
         <section class="card">
             <h2><span class="material-symbols-outlined icon">tv_options_edit_channels</span> <span data-i18n="oip-title">5. Das OmniView-Interface (.oip)</span></h2>
             <div class="callout warning">
-                <p><span class="material-symbols-outlined inline-icon warning-text">warning</span> <strong><span data-i18n="oip-rest-title">Sicherheits-Restriktion:</span></strong> <span data-i18n="oip-rest-desc">Das OmniView-Interface ist ein reines, flüchtiges Anzeige- und Steuerungselement. Im Gegensatz zu globalen Apps ist es einem .oip-Paket auf Systemebene strengstens verboten, eigene Apps, Erweiterungen oder Systemdienste mitzuführen oder nachzuinstallieren. Es darf keinerlei dep-apps-Unterordner besitzen.</span></p>
+                <p><h4><span class="material-symbols-outlined">lock</span> <strong><span class="warning" data-i18n="oip-rest-title">Sicherheits-Restriktion:</span></strong></h4> <span data-i18n="oip-rest-desc">Das OmniView-Interface ist ein reines, flüchtiges Anzeige- und Steuerungselement. Im Gegensatz zu globalen Apps ist es einem .oip-Paket auf Systemebene strengstens verboten, eigene Apps, Erweiterungen oder Systemdienste mitzuführen oder nachzuinstallieren. Es darf keinerlei dep-apps-Unterordner besitzen.</span></p>
             </div>
-            <p><span class="material-symbols-outlined inline-icon accent">folder</span> <strong data-i18n="oip-schema">Interface-Namensschema:</strong> <code>[Sendername]_interface_[Version]_[TargetDevice].oip</code></p>
+            <p><span class="material-symbols-outlined text-icon">label</span> <strong data-i18n="oip-schema">Interface-Namensschema:</strong> <code>[Sendername]_interface_[Version]_[TargetDevice].oip</code></p>
             
             <h3 class="sub-title" data-i18n="oip-blueprint">Blueprint: Struktur eines OmniView-Interfaces (.oip)</h3>
-            <pre><code><span class="material-symbols-outlined blueprint-icon">inventory_2</span> [Sendername]_interface_[Version]_[TargetDevice].oip
- ┣ <span class="material-symbols-outlined blueprint-icon">description</span> infotainmentinfo.json      &lt;- Das Interface-Manifest
- ┣ <span class="material-symbols-outlined blueprint-icon">description</span> certificate.hoc            &lt;- Das von NeoAudio verifizierte 256-Zeichen-Zertifikat
- ┣ <span class="material-symbols-outlined blueprint-icon">description</span> index.html                 &lt;- Der definierte Startpunkt für das TV-Overlay
- ┣ <span class="material-symbols-outlined blueprint-icon">folder</span> deps                       &lt;- Ordner für skriptbasierte Code-Abhängigkeiten
- ┗ <span class="material-symbols-outlined blueprint-icon">folder</span> media_assets               &lt;- Lokale Grafiken, Kanallogos, Overlays</code></pre>
+            <div class="code-block-mock file-tree">
+                <div class="tree-item root"><span class="material-symbols-outlined tree-icon root-icon">inventory_2</span> [Sendername]_interface_[Version]_[TargetDevice].oip</div>
+                <div class="tree-item"><span class="material-symbols-outlined tree-icon">schema</span> infotainmentinfo.json <span class="tree-comment" data-i18n="bp-oip-manifest">&lt;- Das Interface-Manifest</span></div>
+                <div class="tree-item"><span class="material-symbols-outlined tree-icon secure">shield_heart</span> certificate.hoc <span class="tree-comment" data-i18n="bp-oip-cert">&lt;- Das von NeoAudio verifizierte 256-Zeichen-Zertifikat</span></div>
+                <div class="tree-item"><span class="material-symbols-outlined tree-icon html-icon">html</span> index.html <span class="tree-comment" data-i18n="bp-oip-start">&lt;- Der definierte Startpunkt für das TV-Overlay</span></div>
+                <div class="tree-item folder"><span class="material-symbols-outlined tree-icon folder-icon">folder_open</span> deps <span class="tree-comment" data-i18n="bp-oip-deps">&lt;- Ordner für skriptbasierte Code-Abhängigkeiten (z.B. UI-Bibliotheken, CSS)</span></div>
+                <div class="tree-item folder"><span class="material-symbols-outlined tree-icon folder-icon">folder_open</span> media_assets <span class="tree-comment" data-i18n="bp-oip-assets">&lt;- Lokale Grafiken, Kanallogos, Overlays, WebFonts</span></div>
+            </div>
         </section>
 
         <section class="card">
             <h2><span class="material-symbols-outlined icon">apps</span> <span data-i18n="hap-title">6. Globale Apps & Kernel-API Struktur (.hap)</span></h2>
-            <p><span class="material-symbols-outlined inline-icon accent">folder</span> <strong data-i18n="hap-schema">Paket-Namensschema:</strong> <code>com.[Entwickler].[Typ].[Appname]_[Version]_[TargetDevice].hap</code></p>
+            <p><span class="material-symbols-outlined text-icon">label</span> <strong data-i18n="hap-schema">Paket-Namensschema:</strong> <code>com.[Entwickler].[Typ].[Appname]_[Version]_[TargetDevice].hap</code></p>
             
             <p data-i18n="hap-desc">Um Systemsicherheit und schlanke Pakete zu vereinen, unterscheidet Holo+ strikt zwischen drei Abhängigkeitstypen:</p>
             <ol class="api-types">
@@ -151,31 +171,33 @@
             </ol>
 
             <h3 class="sub-title" data-i18n="hap-blueprint">Blueprint: Struktur einer Holo+ App (.hap)</h3>
-            <pre><code><span class="material-symbols-outlined blueprint-icon">inventory_2</span> com.developer.type.appname_1.0.0_universal.hap
- ┣ <span class="material-symbols-outlined blueprint-icon">description</span> appinfo.json               &lt;- Das App-Manifest
- ┣ <span class="material-symbols-outlined blueprint-icon">description</span> certificate.hac            &lt;- Das 256-Zeichen App-Zertifikat
- ┣ <span class="material-symbols-outlined blueprint-icon">description</span> system_auth.hsc            &lt;- (NUR bei type "system") Das 512-Zeichen System-Zertifikat
- ┣ <span class="material-symbols-outlined blueprint-icon">description</span> main.html                  &lt;- Der definierte Startpunkt im Chromium-Core
- ┣ <span class="material-symbols-outlined blueprint-icon">folder</span> deps                       &lt;- Ordner für AUSSCHLIESSLICH selbstgeladene Code-Abhängigkeiten
- ┃ ┗ <span class="material-symbols-outlined blueprint-icon">description</span> custom-slider.js         &lt;- Beispiel für eine selbstgeladene Entwickler-Dependency
- ┣ <span class="material-symbols-outlined blueprint-icon">folder</span> dep-apps                   &lt;- Ordner für zwingend erforderliche Dependency-Apps / System-Services
- ┗ <span class="material-symbols-outlined blueprint-icon">folder</span> media_assets               &lt;- Lokale Grafiken, Fonts, Audio-Assets</code></pre>
+            <div class="code-block-mock file-tree">
+                <div class="tree-item root"><span class="material-symbols-outlined tree-icon root-icon">inventory_2</span> com.developer.type.appname_1.0.0_universal.hap</div>
+                <div class="tree-item"><span class="material-symbols-outlined tree-icon">schema</span> appinfo.json <span class="tree-comment" data-i18n="bp-hap-manifest">&lt;- Das App-Manifest</span></div>
+                <div class="tree-item"><span class="material-symbols-outlined tree-icon secure">token</span> certificate.hac <span class="tree-comment" data-i18n="bp-hap-cert">&lt;- Das 256-Zeichen App-Zertifikat</span></div>
+                <div class="tree-item"><span class="material-symbols-outlined tree-icon secure-sys">admin_panel_settings</span> system_auth.hsc <span class="tree-comment" data-i18n="bp-hap-syscert">&lt;- (NUR bei type "system") Das 512-Zeichen System-Zertifikat</span></div>
+                <div class="tree-item"><span class="material-symbols-outlined tree-icon html-icon">html</span> main.html <span class="tree-comment" data-i18n="bp-hap-start">&lt;- Der definierte Startpunkt im Chromium-Core</span></div>
+                <div class="tree-item folder"><span class="material-symbols-outlined tree-icon folder-icon">folder_open</span> deps <span class="tree-comment" data-i18n="bp-hap-deps">&lt;- Ordner für AUSSCHLIESSLICH selbstgeladene, proprietäre Code-Abhängigkeiten</span></div>
+                <div class="tree-item indent-1"><span class="material-symbols-outlined tree-icon js-icon">javascript</span> custom-slider.js <span class="tree-comment" data-i18n="bp-hap-depfile">&lt;- Beispiel für eine selbstgeladene Entwickler-Dependency</span></div>
+                <div class="tree-item folder restrictive"><span class="material-symbols-outlined tree-icon folder-icon alert-icon">folder_shared</span> dep-apps <span class="tree-comment" data-i18n="bp-hap-depapps">&lt;- Ordner für zwingend erforderliche Dependency-Apps / System-Services</span></div>
+                <div class="tree-item folder"><span class="material-symbols-outlined tree-icon folder-icon">folder_open</span> media_assets <span class="tree-comment" data-i18n="bp-hap-assets">&lt;- Lokale Grafiken, Fonts, Audio-Assets</span></div>
+            </div>
         </section>
 
         <section class="card">
             <h2><span class="material-symbols-outlined icon">security</span> <span data-i18n="mal-title">8. Der Malware-Review- & System-Service-Installationsprozess</span></h2>
             <div class="process-steps">
                 <div class="step">
-                    <div class="step-num">1</div>
+                    <div class="step-num"><span class="material-symbols-outlined step-sys-icon">flaky</span></div>
                     <p><strong data-i18n="mal-step1">Paket-Isolierung:</strong> <span data-i18n="mal-step1-desc">Das OS scannt die appinfo.json. Bei Erkennung von "system" oder restriktiven Berechtigungsanforderungen innerhalb des holo-app-core (wie z. B. Modifikationen am Tuner oder Netzwerk-Stops) wird der automatische Installationsprozess eingefroren.</span></p>
                 </div>
                 <div class="step">
-                    <div class="step-num">2</div>
+                    <div class="step-num"><span class="material-symbols-outlined step-sys-icon">wysiwyg</span></div>
                     <p><strong data-i18n="mal-step2">Das Malware-Review-Popup:</strong> <span data-i18n="mal-step2-desc">Ein unumgehbares, systemweites Sicherheits-Popup öffnet sich. Dieses Fenster führt eine automatisierte statische Code-Analyse des Dienstes durch und präsentiert dem Nutzer eine klare Zusammenfassung, Erklärung und Risikobewertung.</span></p>
                 </div>
                 <div class="step">
-                    <div class="step-num">3</div>
-                    <p><strong data-i18n="mal-step3">Explizite Nutzerbestätigung:</strong> <span data-i18n="mal-step3-desc">Die installation wird erst fortgesetzt, wenn der Nutzer die Risiken aktiv bestätigt und die Installation des System-Services explizit autorisiert.</span></p>
+                    <div class="step-num"><span class="material-symbols-outlined step-sys-icon">fingerprint</span></div>
+                    <p><strong data-i18n="mal-step3">Explizite Nutzerbestätigung:</strong> <span data-i18n="mal-step3-desc">Die Installation wird erst fortgesetzt, wenn der Nutzer die Risiken aktiv bestätigt und die Installation des System-Services explizit autorisiert.</span></p>
                 </div>
             </div>
         </section>
@@ -192,10 +214,10 @@
             <h2><span class="material-symbols-outlined icon">settings_motion_blur</span> <span data-i18n="run-title">10. System-Laufzeitverhalten & Hardware</span></h2>
             <h3 class="sub-title" data-i18n="run-proc">Der Umschalt-Prozess:</h3>
             <ol class="ordered-list">
-                <li data-i18n="run-step1">Demuxing & Update: Der Tuner splittet das Signal. Im Hintergrund wird der Keystore über das Kabel aktualisiert.</li>
-                <li data-i18n="run-step2">OmniView-Boot: Das .oip-Paket wird geladen, das .hoc-Zertifikat über die Formel oder den Keystore validiert.</li>
-                <li data-i18n="run-step3">Internet-Sperre: Ist internet_required auf true und der Receiver offline, bricht der Ladevorgang ab und Holo+ gibt eine standardisierte Fehlermeldung aus.</li>
-                <li data-i18n="run-step4">Rendering: Die hardwarebeschleunigte Web-Engine legt das Interface mit stabilen 60 FPS über das TV-Bild. Bei Kanälen von 480p und weniger schaltet sich der native Pixel-Perfect-Upscaler dazu.</li>
+                <li><span class="material-symbols-outlined list-sys-icon">cable</span> <span data-i18n="run-step1">Demuxing & Update: Der Tuner splittet das Signal. Im Hintergrund wird der Keystore über das Kabel aktualisiert.</span></li>
+                <li><span class="material-symbols-outlined list-sys-icon">vpn_key</span> <span data-i18n="run-step2">OmniView-Boot: Das .oip-Paket wird geladen, das .hoc-Zertifikat über die Formel oder den Keystore validiert.</span></li>
+                <li><span class="material-symbols-outlined list-sys-icon">block</span> <span data-i18n="run-step3">Internet-Sperre: Ist internet_required auf true und der Receiver offline, bricht der Ladevorgang ab und Holo+ gibt eine standardisierte Fehlermeldung aus.</span></li>
+                <li><span class="material-symbols-outlined list-sys-icon">tv_with_assistant</span> <span data-i18n="run-step4">Rendering: Die hardwarebeschleunigte Web-Engine legt das Interface mit stabilen 60 FPS über das TV-Bild. Bei Kanälen von 480p und weniger schaltet sich der native Pixel-Perfect-Upscaler dazu.</span></li>
             </ol>
             
             <div class="callout hardware-rec">
@@ -207,7 +229,7 @@
 
     <footer>
         <div class="footer-container">
-            <p>&copy; 2026 Holo+ OS Project. Built for DVB-C+ Ecosystem.</p>
+            <p><span class="material-symbols-outlined text-icon">copyright</span> 2026 Holo+ OS Project. Built for DVB-C+ Ecosystem.</p>
         </div>
     </footer>
 
