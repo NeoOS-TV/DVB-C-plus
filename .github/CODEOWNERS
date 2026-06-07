@@ -6,4 +6,4 @@
 /system/ @NeoOS-TV
 
 # Individual user log folders (will be expanded automatically by the workflow)
-/users/NeoAudio/ @NeoAudio
+/users/NeoAudio/ @NeoOS-TV
