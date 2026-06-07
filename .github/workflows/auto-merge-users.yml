@@ -1,0 +1,53 @@
+name: Auto-Merge and Register Users
+
+on:
+  pull_request_target:
+    branches: [ main ]
+    types: [ opened, synchronized ]
+
+jobs:
+  register-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Auto-Register New User in CODEOWNERS
+        run: |
+          USER="${{ github.actor }}"
+          # Prüfen, ob der User schon in der CODEOWNERS-Datei existiert
+          if ! grep -q "/users/$USER/" .github/CODEOWNERS; then
+            echo "New developer detected: $USER. Registering..."
+            
+            # Git konfigurieren
+            git config --global user.name "HoloOS-Bot"
+            git config --global user.email "bot@holo-os.local"
+            
+            # User am Ende der CODEOWNERS-Datei anhängen
+            echo "/users/$USER/ @$USER" >> .github/CODEOWNERS
+            
+            # Änderungen direkt auf main committen
+            git add .github/CODEOWNERS
+            git commit -m "system(git): auto-registered new contributor @$USER"
+            git push origin main
+          fi
+
+      - name: Check changed files in PR
+        id: file_check
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            safe_zone:
+              - 'users/${{ github.actor }}/**'
+              - 'README.md'
+
+      - name: Automatically Merge PR
+        if: steps.file_check.outputs.safe_zone == 'true'
+        uses: pascalgn/automerge-action@v0.16.4
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: ""
+          MERGE_METHOD: "merge"
