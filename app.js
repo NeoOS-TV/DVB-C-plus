@@ -39,7 +39,6 @@ const translations = {
         "cert-hsc": "512 Zeichen. Zwingend erforderlich für System-Services.",
         "cert-code-title": "Syntax-Aufbau einer Zertifikatsdatei",
         
-        /* Blueprint Syntax Strings */
         "bp-comment-1": "#Holo+ Application/OmniView/System Zertifikat",
         "bp-comment-2": "#Verteilt durch NeoAudio am 1. Juni 2026 (gültig für 4 Jahre)",
         "bp-comment-3": "#Zertifikatsschlüssel:",
@@ -58,7 +57,7 @@ const translations = {
         "oip-blueprint": "Blueprint: Struktur eines OmniView-Interfaces (.oip)",
         
         "bp-oip-manifest": "<- Das Interface-Manifest",
-        "bp-oip-cert": "<- Das verifizierte Zertifikat",
+        "bp-oip-cert": "<- Das geverifizierte Zertifikat",
         "bp-oip-start": "<- Der definierte Startpunkt",
         "bp-oip-deps": "<- Ordner für Code-Abhängigkeiten",
         "bp-oip-assets": "<- Lokale Grafiken und Assets",
@@ -101,7 +100,7 @@ const translations = {
         "run-hw-title": "Off-the-Shelf Hardware-Empfehlung",
         "run-hw-desc": "Vu+ Ultimo 4K: Die Premium-Wahl wegen der massiven FBC-Tuner-Architektur.",
 
-        /* NEW MODAL TRANSLATIONS (DE) */
+        /* MODAL TRANSLATIONS */
         "pop-title": "Anleitung zur GitHub-Mitarbeit (Contribution)",
         "pop-lead": "Bevor du loslegst, beachte bitte unsere zentralen Kernkompetenzen und technologischen Grundlagen.",
         "pop-req-title": "1. Was wir voraussetzen",
@@ -115,21 +114,21 @@ const translations = {
         "pop-struct-desc": "Achte penibel darauf, deine Daten gemäss der standardisierten Ordnerstrukturen einzureichen. Beachte hierzu die oben abgebildeten Blueprints für .oip-Interfaces (Kapitel 5) und .hap-Anwendungen (Kapitel 6).",
         "pop-contact-title": "4. Direktkontakt & Support",
         "pop-contact-desc": "Hast du komplexe Fragen zur Implementierung oder Architektur? Du erreichst den Kern-Maintainer jederzeit unter:",
-        "pop-wf-title": "GitHub-Workflow Kurzform",
+        "pop-wf-title": "GitHub Workflow Kurzform",
         "pop-wf-desc": "Repository forken -> Branch erstellen -> Änderungen committen -> Pull Request (PR) einreichen.",
         "pop-btn-go": "Weiter zu GitHub & Forken"
     },
     en: {
         "hero-title": "DVB-C+ & Holo+ OS: Full Specification",
-        "hero-desc": "The Holo+ operating system forms the native interface platform for the hybrid cable system DVB-C+. It governs the hardware-accelerated decoding of high-bitrate media streams, the execution of station-owned interactive overlays (OmniView), and global system applications (Apps).",
+        "hero-desc": "The Holo+ operating system forms the native interface platform for the hybrid cable system DVB-C+.",
         "contrib-title": "Join the TV Revolution!",
-        "contrib-desc": "DVB-C+ and Holo+ OS are open-source projects that thrive on community contributions. Whether you are a kernel developer, familiar with tuner architecture, or writing app blueprints.",
+        "contrib-desc": "DVB-C+ and Holo+ OS are open-source projects that thrive on community contributions.",
         "contrib-btn": "Contribute on GitHub Now",
         "charta-title": "1. The Holo+ Advertising & Performance Charta",
         "charta-tv-allow": "Allowed (Classic TV Ads):",
         "charta-tv-allow-desc": "Traditional ad breaks within the linear video stream of the stations are fully allowed.",
         "charta-app-allow": "Allowed (Moderate App & OmniView Ads):",
-        "charta-app-allow-desc": "Within global apps (.hap) and the OmniView interface (.oip), moderate advertising is permitted to fund developers.",
+        "charta-app-allow-desc": "Within global apps (.hap) and the OmniView interface (.oip), moderate advertising is permitted.",
         "charta-forbidden": "Strictly Prohibited (Trackers & Spam):",
         "charta-forbidden-desc": "Any type of invisible background trackers is prohibited at protocol level.",
         "charta-no-ai": "No AI Slop:",
@@ -220,7 +219,7 @@ const translations = {
         "run-hw-title": "Off-the-Shelf Reference Implementations",
         "run-hw-desc": "Vu+ Ultimo 4K: The base baseline choice featuring proper high tier tuner components.",
 
-        /* NEW MODAL TRANSLATIONS (EN) */
+        /* MODAL TRANSLATIONS */
         "pop-title": "GitHub Contribution Guidelines",
         "pop-lead": "Before getting started, please check our essential stack requirements and architecture base.",
         "pop-req-title": "1. Prerequisites",
@@ -242,7 +241,7 @@ const translations = {
         "hero-title": "DVB-C+ & Holo+ OS: Volledige Specificatie",
         "hero-desc": "Het Holo+ besturingssysteem vormt het natieve interfacesplatform voor het hybride kabelsysteem DVB-C+.",
         "contrib-title": "Bouw mee aan de tv-revolutie!",
-        "contrib-desc": "DVB-C+ und Holo+ OS zijn open-source projecten. Of je nu een kernel-ontwikkelaar bent of app-blueprints schrijft.",
+        "contrib-desc": "DVB-C+ und Holo+ OS zijn open-source projecten.",
         "contrib-btn": "Werk nu mee op GitHub",
         "charta-title": "1. Het Holo+ Reclame- & Prestatiehandvest",
         "charta-tv-allow": "Toegestaan (Klassieke TV-reclame):",
@@ -259,7 +258,7 @@ const translations = {
         "hw-dual": "Dual-Tuner-apparaten (Winkelstandaard):",
         "hw-dual-desc": "Bieden volledige achterwaartse compatibiliteit.",
         "hw-scaler": "De Natieve Retro-Upscaler:",
-        "hw-scaler-desc": "Voor analoge signalen und digitale streams met een resolutie van 480p en minder.",
+        "hw-scaler-desc": "Voor analoge signalen und digitale streams met een resolutie van 480p und minder.",
         "hw-scaler-func": "Werking:",
         "hw-scaler-func-desc": "Maakt gebruik van een nauwkeurig integer-scaling-algoritme.",
         "hw-scaler-req": "Hardwarevereiste:",
@@ -339,13 +338,13 @@ const translations = {
         "run-hw-title": "Off-the-Shelf Hardware-aanbeveling",
         "run-hw-desc": "Vu+ Ultimo 4K: De premium hardware keuze voorzien van geavanceerde tuners.",
 
-        /* NEW MODAL TRANSLATIONS (NL) */
+        /* MODAL TRANSLATIONS */
         "pop-title": "GitHub Richtlijnen voor Bijdragen",
         "pop-lead": "Voordat u begint, moet u rekening houden met onze belangrijkste technologische grondbeginselen.",
         "pop-req-title": "1. Vereisten",
         "pop-req-desc": "Aangezien Holo+ OS dicht bij de hardware opereert, moet u over gedegen kennis beschikken op de volgende gebieden:",
         "pop-req-li1": "Linux-basis: Veilige omgang met systeemarchitecturen, build-pipelines en daemons.",
-        "pop-req-li2": "Kernelontwikkeling: Optimalisatie van drivers, geheugenbeheer en schedulers.",
+        "pop-req-li2": "Kernelontwikkeling: Driver-optimalisatie, geheugenbeheer en schedulers.",
         "pop-req-li3": "Code-standaarden: Modulaire, sterk geoptimaliseerde en gedocumenteerde systeemcode.",
         "pop-ideas-title": "2. Ontwikkelaarsmanifest & Projectideeën",
         "pop-ideas-desc": "Alle actuele vereisten, gedetailleerde concepten en belangrijke mijlpalen zijn direct te vinden in de hoofdmap van de repository in het bestand:",
@@ -359,32 +358,39 @@ const translations = {
     }
 };
 
-// LOGIK FÜR DAS MODAL (POPUP)
-const modal = document.getElementById('contribModal');
-const openModalBtn = document.getElementById('openContribModal');
-const closeModalBtn = document.getElementById('closeContribModal');
+// INITIALISIERUNG DES MODALS
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById('contribModal');
+    const openModalBtn = document.getElementById('openContribModal');
+    const closeModalBtn = document.getElementById('closeContribModal');
 
-openModalBtn.addEventListener('click', () => {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Verhindert Scrollen im Hintergrund
-});
+    if (openModalBtn && modal && closeModalBtn) {
+        openModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
 
-closeModalBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-});
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
 
-// Schliessen, wenn man ausserhalb des Fensters klickt
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     }
-});
 
-// SPRACHWÄHLER LOGIK
-document.getElementById('langSwitch').addEventListener('change', (e) => {
-    switchLanguage(e.target.value);
+    // SPRACHWÄHLER LOGIK
+    const langSelect = document.getElementById('langSwitch');
+    if (langSelect) {
+        langSelect.addEventListener('change', (e) => {
+            switchLanguage(e.target.value);
+        });
+    }
 });
 
 function switchLanguage(lang) {
@@ -394,8 +400,10 @@ function switchLanguage(lang) {
     elements.forEach(elem => {
         const key = elem.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
+            // Findet ein Icon, falls eines direkt im Übersetzungselement liegt
             const iconSpan = elem.querySelector('.material-symbols-outlined');
             if (iconSpan) {
+                // Ersetzt nur den Text-Node, um die HTML-Struktur der Icons nicht zu zerstören
                 const textNode = Array.from(elem.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
                 if (textNode) {
                     textNode.textContent = " " + translations[lang][key];
