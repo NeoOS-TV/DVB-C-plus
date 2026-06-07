@@ -44,10 +44,10 @@
                     <h2><span class="material-symbols-outlined icon">group</span><span data-i18n="contrib-title"> Werde Teil der TV-Revolution!</span></h2>
                     <p data-i18n="contrib-desc">DVB-C+ und Holo+ OS sind Open-Source-Projekte, die von der Community leben. Egal ob du Kernel-Entwickler bist, dich mit Tuner-Architekturen auskennst oder App-Blueprints schreibst.</p>
                 </div>
-                <a href="https://github.com/NeoOS-TV/DVB-C-plus" target="_blank" class="btn-contrib">
+                <button id="openContribModal" class="btn-contrib">
                     <span class="material-symbols-outlined">code</span>
                     <span data-i18n="contrib-btn">Jetzt auf GitHub mitwirken</span>
-                </a>
+                </button>
             </div>
         </section>
 
@@ -239,6 +239,55 @@
             </div>
         </section>
     </main>
+
+    <div id="contribModal" class="modal-overlay">
+        <div class="modal-window">
+            <button id="closeContribModal" class="modal-close-btn">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="modal-header">
+                <span class="material-symbols-outlined modal-icon">terminal</span>
+                <h2 data-i18n="pop-title">Anleitung zur GitHub-Mitarbeit (Contribution)</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-lead" data-i18n="pop-lead">Bevor du loslegst, beachte bitte unsere zentralen Kernkompetenzen und technologischen Grundlagen.</p>
+                
+                <h3 data-i18n="pop-req-title"><span class="material-symbols-outlined text-icon">build</span> 1. Was wir voraussetzen</h3>
+                <p data-i18n="pop-req-desc">Da Holo+ OS tief im hardwarenahen Bereich agiert, solltest du fundierte Kenntnisse in folgenden Domänen mitbringen:</p>
+                <ul class="pop-list">
+                    <li data-i18n="pop-req-li1"><strong>Linux-Basis:</strong> Sicherer Umgang mit Systemarchitekturen, Build-Pipelines und Daemons.</li>
+                    <li data-i18n="pop-req-li2"><strong>Kernel-Entwicklung:</strong> Treiberanpassung, Speicherverwaltung und Scheduler-Optimierung.</li>
+                    <li data-i18n="pop-req-li3"><strong>Code-Standards:</strong> Modularer, hochoptimierter und dokumentierter Systemcode.</li>
+                </ul>
+
+                <h3 data-i18n="pop-ideas-title"><span class="material-symbols-outlined text-icon">description</span> 2. Entwickler-Manifest & Projektideen</h3>
+                <p data-i18n="pop-ideas-desc">Alle aktuellen Anforderungen, detaillierten Konzepte und wichtigen Meilensteine findest du direkt im Hauptverzeichnis des Repositories in der Datei:</p>
+                <div class="code-block-mock inline-file">
+                    <span class="material-symbols-outlined text-icon">draft</span> IDEAS AND IMPORTANT.md
+                </div>
+
+                <h3 data-i18n="pop-struct-title"><span class="material-symbols-outlined text-icon">folder_open</span> 3. Strukturierte Einreichung</h3>
+                <p data-i18n="pop-struct-desc">Achte penibel darauf, deine Daten gemäss der standardisierten Ordnerstrukturen einzureichen. Beachte hierzu die oben abgebildeten Blueprints für <code>.oip</code>-Interfaces (Kapitel 5) und <code>.hap</code>-Anwendungen (Kapitel 6).</p>
+
+                <h3 data-i18n="pop-contact-title"><span class="material-symbols-outlined text-icon">alternate_email</span> 4. Direktkontakt & Support</h3>
+                <p data-i18n="pop-contact-desc">Hast du komplexe Fragen zur Implementierung oder Architektur? Du erreichst den Kern-Maintainer jederzeit unter:</p>
+                <div class="contact-box">
+                    <span class="material-symbols-outlined">mail</span> <a href="mailto:neoaudio@murena.io">neoaudio@murena.io</a>
+                </div>
+
+                <div class="callout warning pop-callout">
+                    <h4 data-i18n="pop-wf-title"><span class="material-symbols-outlined">git_branch</span> GitHub-Workflow Kurzform</h4>
+                    <p data-i18n="pop-wf-desc">Repository forken -> Branch erstellen -> Änderungen committen -> Pull Request (PR) einreichen.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="https://github.com/NeoOS-TV/DVB-C-plus" target="_blank" class="btn-contrib final-git-btn">
+                    <span class="material-symbols-outlined">bolt</span>
+                    <span data-i18n="pop-btn-go">Weiter zu GitHub & Forken</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-container">
