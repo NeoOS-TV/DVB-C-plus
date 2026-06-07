@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVB-C+ & Holo+ OS Docs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="material-symbols-outlined logo-icon">layers</span>
+                <span class="logo-text">Holo+ <span class="accent">OS</span></span>
+            </div>
+            <div class="lang-selector">
+                <span class="material-symbols-outlined">language</span>
+                <select id="langSwitch">
+                    <option value="de">Deutsch</option>
+                    <option value="en">English</option>
+                    <option value="nl">Nederlands</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="hero card">
+            <div class="badge">v2.7.0</div>
+            <h1 data-i18n="hero-title">DVB-C+ & Holo+ OS: Gesamtspezifikation</h1>
+            <p data-i18n="hero-desc">Das Betriebssystem Holo+ bildet die native Schnittstellenplattform für das hybride Kabelsystem DVB-C+. Es regelt die hardwarebeschleunigte Dekodierung hochbitratiger Medienströme, die Ausführung von sendereigenen interaktiven Overlays (OmniView) sowie globalen Systemapplikationen (Apps). Das System trennt zwischen isolierten Broadcast-Erweiterungen und tief integrierten Systemdiensten über ein proprietäres, mehrstufiges Sicherheits- und Zertifikatsmodell.</p>
+        </section>
+
+        <section class="card contrib-card">
+            <div class="contrib-content">
+                <div class="contrib-text">
+                    <h2><span class="material-symbols-outlined icon">group</span> <span data-i18n="contrib-title">Werde Teil der TV-Revolution!</span></h2>
+                    <p data-i18n="contrib-desc">DVB-C+ und Holo+ OS sind Open-Source-Projekte, die von der Community leben. Egal ob du Kernel-Entwickler bist, dich mit Tuner-Architekturen auskennst, App-Blueprints schreibst oder die Dokumentation verbessern willst – jede Hilfe bringt uns dem modernen, trackerfreien Kabelfernsehen näher.</p>
+                </div>
+                <a href="https://github.com/NeoOS-TV/DVB-C-plus" target="_blank" class="btn-contrib">
+                    <span class="material-symbols-outlined">code</span>
+                    <span data-i18n="contrib-btn">Jetzt auf GitHub mitwirken</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">gavel</span> <span data-i18n="charta-title">1. Die Holo+ Werbe- & Performance-Charta</span></h2>
+            <ul class="feature-list">
+                <li>
+                    <strong data-i18n="charta-tv-allow">Erlaubt (Klassische TV-Werbung):</strong>
+                    <span data-i18n="charta-tv-allow-desc">Traditionelle Werbeblöcke im linearen Videostream der Sender sind vollumfänglich erlaubt. Der Receiver greift nicht in das gesendete Bild- und Tonmaterial ein.</span>
+                </li>
+                <li>
+                    <strong data-i18n="charta-app-allow">Erlaubt (Moderate App- & OmniView-Werbung):</strong>
+                    <span data-i18n="charta-app-allow-desc">Innerhalb globaler Apps (.hap) und dem OmniView-Interface (.oip) ist Werbung (z. B. Banner, Empfehlungen, In-Content-Promotions) in moderaten Mengen gestattet, um die Entwickler und Sender zu finanzieren. Das visuelle Design darf den Nutzer jedoch nicht in der Kern-Bedienung blockieren oder Menüstrukturen unbrauchbar machen.</span>
+                </li>
+                <li>
+                    <strong class="forbidden" data-i18n="charta-forbidden">Strengstens verboten (Tracker & Werbe-Spam):</strong>
+                    <span data-i18n="charta-forbidden-desc">Jegliche Form von unsichtbaren Trackern zur Datensammlung, Telemetrie-Schnüfflern, User-Behavior-Analyse oder aufdringlichem Werbe-Spam (z. B. unschließbare Pop-ups) ist auf Protokollebene verboten. Verstößt ein Entwickler oder Sender gegen diese Charta, wird das Zertifikat (.hoc / .hac) über die hardwarebasierte Revocation-List dauerhaft entzogen.</span>
+                </li>
+                <li>
+                    <strong data-i18n="charta-no-ai">Kein AI-Slop:</strong>
+                    <span data-i18n="charta-no-ai-desc">Holo+ verzichtet vollständig auf künstlich aufgeblasene Marketing-Features („AI-Optimierung“, „Smart-Predictive-Zapping“ etc.). Alle Bild- und Tonprozesse basieren auf mathematisch präzisen, deterministischen Algorithmen und direkter Hardware-Power, um maximale Stabilität und minimale System-Latenzzeiten zu garantieren.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">router</span> <span data-i18n="hw-title">2. Hardware- & Tuner-Architektur & Retro-Upscaler</span></h2>
+            <ul class="feature-list">
+                <li><strong data-i18n="hw-single">Single-Tuner-Geräte:</strong> <span data-i18n="hw-single-desc">Exklusiv für den DVB-C+ Standard (4K/8K via AV1/HEVC, Dolby Atmos/FLAC, OmniView).</span></li>
+                <li><strong data-i18n="hw-dual">Dual-Tuner-Geräte (Retail-Standard):</strong> <span data-i18n="hw-dual-desc">Bieten volle Abwärtskompatibilität für klassisches DVB-C (über Tuner 2) und analoge RF-Signale (VHF/UHF).</span></li>
+                <li>
+                    <strong data-i18n="hw-scaler">Der Native Retro-Upscaler:</strong> <span data-i18n="hw-scaler-desc">Für analoge Signale und digitale Streams mit einer Auflösung von 480p und weniger (z. B. VHS-Videorekorder, Röhren-Konsolen) besitzt Holo+ einen dedizierten, hardwarebeschleunigten Upscaler.</span>
+                    <div class="nested-info">
+                        <p>💡 <em><span data-i18n="hw-scaler-func">Funktionsweise:</span></em> <span data-i18n="hw-scaler-func-desc">Nutzt einen präzisen Integer-Scaling-Algorithmus (Pixel-Perfect-Modus) kombiniert mit einer optionalen, zuschaltbaren Scanline-Simulation, um Unschärfe-Artefakte moderner Panels zu eliminieren.</span></p>
+                        <p>⚠️ <em><span data-i18n="hw-scaler-req">Hardware-Voraussetzung:</span></em> <span data-i18n="hw-scaler-req-desc">Dieses Feature wird nur auf Receivern mit ausreichender GPU-Rechenleistung freigeschaltet.</span></p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">enhanced_encryption</span> <span data-i18n="sec-title">3. In-Stream Keystore-Update & Offline-Sicherheit</span></h2>
+            <ul class="feature-list">
+                <li><strong data-i18n="sec-carousel">Globales Keystore-Karussell:</strong> <span data-i18n="sec-carousel-desc">Jeder DVB-C+ Transponder strahlt auf einer geschützten System-PID kontinuierlich den aktuellen, von NeoAudio (Kontakt: neoaudio@murena.io) signierten Master-Keystore aus. Der Receiver aktualisiert seine Sicherheitsdatenbank vollautomatisch und zu 100 % offline über das physische Kabelnetz.</span></li>
+                <li><strong data-i18n="sec-checksum">Mathematische Prüfziffer (Fallback):</strong> <span data-i18n="sec-checksum-desc">Offizielle Zertifikate enthalten eine integrierte Prüfziffer. Die mathematische Formel im OS Holo+ kann diese bei echten Zertifikaten immer erfolgreich auflösen, wodurch das Interface sofort als verifiziert gilt.</span></li>
+                <li><strong data-i18n="sec-window">30-Tage-Vertrauensfenster:</strong> <span data-i18n="sec-window-desc">Schlägt die Formel fehl und das Zertifikat ist unbekannt, läuft die Software für 30 Tage als Kulanz. Der Nutzer wird über diskrete System-Pop-ups gebeten, das Gerät kurzzeitig online zu synchronisieren. Nach 30 Tagen ohne Abgleich erfolgt die Herabstufung in den eingeschränkten Development-Modus.</span></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">badge</span> <span data-i18n="cert-title">4. Sicherheits- & Zertifikats-Struktur</span></h2>
+            <p data-i18n="cert-desc">Zertifikate sind UTF-8-kodierte Textdateien, die das OS in numerische Werte auflöst:</p>
+            <div class="grid-3">
+                <div class="grid-item"><h3>.hoc</h3><p data-i18n="cert-hoc">256 Zeichen. Für sendergebundene .oip-Interfaces.</p></div>
+                <div class="grid-item"><h3>.hac</h3><p data-i18n="cert-hac">256 Zeichen. Für globale Apps (.hap).</p></div>
+                <div class="grid-item"><h3>.hsc</h3><p data-i18n="cert-hsc">512 Zeichen. Zwingend erforderlich für System-Services mit tiefen Rechten.</p></div>
+            </div>
+            <div class="callout alert">
+                <h4 data-i18n="cert-dev-title">Der Development-Modus (Unsigniert)</h4>
+                <p data-i18n="cert-dev-desc">Software ohne gültiges Zertifikat läuft in einer Sandbox ohne Systemzugriff, zeigt vor dem Start eine Warnung und trägt ein permanentes, transparentes Branding-Badge („Development OmniView Interface“ bzw. „Development Holo+ App“).</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">tv_options_edit_channels</span> <span data-i18n="oip-title">5. Das OmniView-Interface (.oip)</span></h2>
+            <div class="callout warning">
+                <p>⚠️ <strong><span data-i18n="oip-rest-title">Sicherheits-Restriktion:</span></strong> <span data-i18n="oip-rest-desc">Das OmniView-Interface ist ein reines, flüchtiges Anzeige- und Steuerungselement. Im Gegensatz zu globalen Apps ist es einem .oip-Paket auf Systemebene strengstens verboten, eigene Apps, Erweiterungen oder Systemdienste mitzuführen oder nachzuinstallieren. Es darf keinerlei dep-apps-Unterordner besitzen.</span></p>
+            </div>
+            <p>📁 <strong data-i18n="oip-schema">Interface-Namensschema:</strong> <code>[Sendername]_interface_[Version]_[TargetDevice].oip</code></p>
+            
+            <h3 class="sub-title" data-i18n="oip-blueprint">Blueprint: Struktur eines OmniView-Interfaces (.oip)</h3>
+            <pre><code>📦 [Sendername]_interface_[Version]_[TargetDevice].oip
+ ┣ 📄 infotainmentinfo.json      &lt;- Das Interface-Manifest
+ ┣ 📄 certificate.hoc            &lt;- Das von NeoAudio verifizierte 256-Zeichen-Zertifikat
+ ┣ 📄 index.html                 &lt;- Der definierte Startpunkt für das TV-Overlay
+ ┣ 📂 deps                       &lt;- Ordner für skriptbasierte Code-Abhängigkeiten (z.B. UI-Bibliotheken, CSS)
+ ┗ 📂 media_assets               &lt;- Lokale Grafiken, Kanallogos, Overlays, WebFonts</code></pre>
+
+            <h3 class="sub-title" data-i18n="oip-json">Spezifikation der infotainmentinfo.json</h3>
+            <pre><code>{
+  "dvb_c_plus_version": "2.7.0",
+  "sender_id": "DE-NRW-RETR0-01",
+  "sender_name": "RetroGaming TV",
+  "interface_system": "OmniView",
+  "app_version": "1.0.0",
+  "entrypoint": "index.html",
+  "certificate_path": "certificate.hoc",
+  "network_settings": { "internet_required": false },
+  "device_compatibility": { "target_device": "universal", "required_ram_mb": 64, "hardware_acceleration": "required" },
+  "dependencies": [{ "name": "holo_omniview_core", "source": "system" }],
+  "display_settings": { "resolution_target": "3840x2160", "layer": "overlay_above_video", "transparent_background": true, "initial_state": "minimized" }
+}</code></pre>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">apps</span> <span data-i18n="hap-title">6. Globale Apps & Kernel-API Struktur (.hap)</span></h2>
+            <p>📁 <strong data-i18n="hap-schema">Paket-Namensschema:</strong> <code>com.[Entwickler].[Typ].[Appname]_[Version]_[TargetDevice].hap</code></p>
+            
+            <p data-i18n="hap-desc">Um Systemsicherheit und schlanke Pakete zu vereinen, unterscheidet Holo+ strikt zwischen drei Abhängigkeitstypen:</p>
+            <ol class="api-types">
+                <li><span data-i18n="api-type1"><strong>Shared System Frameworks:</strong> Globale, im OS integrierte Web-Frameworks (react, enact, hls.js).</span></li>
+                <li><span data-i18n="api-type2"><strong>System Core APIs (holo-app-core):</strong> Restriktive System-Schnittstellen. Nur freigeschaltet, wenn das Zertifikat die entsprechenden Berechtigungen besitzt. Ermöglicht Lese- und Schreibzugriff auf sensible Hardware-Ressourcen wie den Tuner-Status, Signalstärken oder den WLAN-Chipsatz.</span></li>
+                <li><span data-i18n="api-type3"><strong>Selbstgeladene Dependencies (Custom Dependencies):</strong> Lokale Bibliotheken des Entwicklers, die im Paket mitgeliefert und über den relativen Pfad deps/ angesprochen werden.</span></li>
+            </ol>
+
+            <h3 class="sub-title" data-i18n="hap-blueprint">Blueprint: Struktur einer Holo+ App (.hap)</h3>
+            <pre><code>📦 com.developer.type.appname_1.0.0_universal.hap
+ ┣ 📄 appinfo.json               &lt;- Das App-Manifest (Spezifikation siehe unten)
+ ┣ 📄 certificate.hac            &lt;- Das 256-Zeichen App-Zertifikat
+ ┣ 📄 system_auth.hsc            &lt;- (NUR bei type "system") Das 512-Zeichen System-Zertifikat
+ ┣ 📄 main.html                  &lt;- Der definierte Startpunkt im Chromium-Core
+ ┣ 📂 deps                       &lt;- Ordner für AUSSCHLIESSLICH selbstgeladene, proprietäre Code-Abhängigkeiten
+ ┃ ┗ 📄 custom-slider.js         &lt;- Beispiel für eine selbstgeladene Entwickler-Dependency
+ ┣ 📂 dep-apps                   &lt;- Ordner für zwingend erforderliche Dependency-Apps / System-Services
+ ┗ 📂 media_assets               &lt;- Lokale Grafiken, Fonts, Audio-Assets</code></pre>
+
+            <h3 class="sub-title" data-i18n="hap-json">Spezifikation der appinfo.json</h3>
+            <pre><code>{
+  "holo_os_version": "2.7.0",
+  "package_id": "com.developer.release.mediacenter",
+  "app_name": "Holo+ Media Center",
+  "app_type": "release",
+  "version": "1.0.0",
+  "runtime": {
+    "engine": "chromium_embedded",
+    "entrypoint": "main.html",
+    "mandatory_user_agent": "Mozilla/5.0 (Linux; Holo+ OS; Receiver) Chromium/120.0 DVB-C+ AppEngine/1.0"
+  },
+  "security": { "certificate_file": "certificate.hac", "system_certificate_file": null },
+  "dependencies": {
+    "system_core_apis": [{ "api_name": "holo-app-core", "source": "system", "permissions": ["tuner.status.read", "tuner.stream.control", "wifi.status.read", "wifi.signal.strength"] }],
+    "shared_system_frameworks": [{ "name": "react", "source": "system", "version": "^18.2.0" }, { "name": "enact", "source": "system", "version": "^4.0.0" }, { "name": "hls.js", "source": "system", "version": "^1.4.0" }],
+    "custom_local_dependencies": [{ "name": "custom-slider", "source": "package", "local_path": "deps/custom-slider.js", "version": "3.1.2" }],
+    "required_apps": [{ "package_id": "com.developer.system.corehelper", "type": "system", "local_path": "dep-apps/com.developer.system.corehelper_1.0.0_universal.hap" }]
+  },
+  "hardware": { "target_device": "universal", "min_ram_mb": 256, "require_gpu_acceleration": true }
+}</code></pre>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">security</span> <span data-i18n="mal-title">8. Der Malware-Review- & System-Service-Installationsprozess</span></h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <p><strong data-i18n="mal-step1">Paket-Isolierung:</strong> <span data-i18n="mal-step1-desc">Das OS scannt die appinfo.json. Bei Erkennung von "system" oder restriktiven Berechtigungsanforderungen innerhalb des holo-app-core (wie z. B. Modifikationen am Tuner oder Netzwerk-Stops) wird der automatische Installationsprozess eingefroren.</span></p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <p><strong data-i18n="mal-step2">Das Malware-Review-Popup:</strong> <span data-i18n="mal-step2-desc">Ein unumgehbares, systemweites Sicherheits-Popup öffnet sich. Dieses Fenster führt eine automatisierte statische Code-Analyse des Dienstes durch und präsentiert dem Nutzer eine klare Zusammenfassung, Erklärung und Risikobewertung.</span></p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <p><strong data-i18n="mal-step3">Explizite Nutzerbestätigung:</strong> <span data-i18n="mal-step3-desc">Die installation wird erst fortgesetzt, wenn der Nutzer die Risiken aktiv bestätigt und die Installation des System-Services explizit autorisiert.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">bolt</span> <span data-i18n="feat-title">9. Next-Gen Features von DVB-C+</span></h2>
+            <ul class="feature-list">
+                <li><strong data-i18n="feat-zap">Instant-Zap (Pre-Caching):</strong> <span data-i18n="feat-zap-desc">Bei Geräten mit FBC-Tunern decodiert Holo+ die I-Frames der umliegenden Kanäle permanent im Hintergrund mit. Das Umschalten erfolgt in unter 0,1 Sekunden.</span></li>
+                <li><strong data-i18n="feat-audio">Clean-Dialogue-Audio-Mischer:</strong> <span data-i18n="feat-audio-desc">Sender können eine separate PID für reine Dialoge mitschicken. Der Nutzer kann im Audiomenü die Stimmen stufenlos anheben – rein über Hardware-Mischung der Tonspuren.</span></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2><span class="material-symbols-outlined icon">settings_motion_blur</span> <span data-i18n="run-title">10. System-Laufzeitverhalten & Hardware</span></h2>
+            <h3 class="sub-title" data-i18n="run-proc">Der Umschalt-Prozess:</h3>
+            <ol class="ordered-list">
+                <li data-i18n="run-step1">Demuxing & Update: Der Tuner splittet das Signal. Im Hintergrund wird der Keystore über das Kabel aktualisiert.</li>
+                <li data-i18n="run-step2">OmniView-Boot: Das .oip-Paket wird geladen, das .hoc-Zertifikat über die Formel oder den Keystore validiert.</li>
+                <li data-i18n="run-step3">Internet-Sperre: Ist internet_required auf true und der Receiver offline, bricht der Ladevorgang ab und Holo+ gibt eine standardisierte Fehlermeldung aus.</li>
+                <li data-i18n="run-step4">Rendering: Die hardwarebeschleunigte Web-Engine legt das Interface mit stabilen 60 FPS über das TV-Bild. Bei Kanälen von 480p und weniger schaltet sich der native Pixel-Perfect-Upscaler dazu.</li>
+            </ol>
+            
+            <div class="callout hardware-rec">
+                <h4><span class="material-symbols-outlined">developer_board</span> <span data-i18n="run-hw-title">Off-the-Shelf Hardware-Empfehlung</span></h4>
+                <p><strong>Vu+ Ultimo 4K:</strong> <span data-i18n="run-hw-desc">Die Premium-Wahl wegen der massiven FBC-Tuner-Architektur und der Option, einen analogen RF-Zusatztuner für Retro-Geräte nachzurüsten. Liefert mehr als genug GPU-Power für den Upscaler, komplexe Chromium-Apps sowie für das Berechnen der Malware-Reviews bei System-Services.</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Holo+ OS Project. Built for DVB-C+ Ecosystem.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
