@@ -79,8 +79,8 @@
                 <li>
                     <strong data-i18n="hw-scaler">Der Native Retro-Upscaler:</strong> <span data-i18n="hw-scaler-desc">Für analoge Signale und digitale Streams mit einer Auflösung von 480p und weniger (z. B. VHS-Videorekorder, Röhren-Konsolen) besitzt Holo+ einen dedizierten, hardwarebeschleunigten Upscaler.</span>
                     <div class="nested-info">
-                        <p>💡 <em><span data-i18n="hw-scaler-func">Funktionsweise:</span></em> <span data-i18n="hw-scaler-func-desc">Nutzt einen präzisen Integer-Scaling-Algorithmus (Pixel-Perfect-Modus) kombiniert mit einer optionalen, zuschaltbaren Scanline-Simulation, um Unschärfe-Artefakte moderner Panels zu eliminieren.</span></p>
-                        <p>⚠️ <em><span data-i18n="hw-scaler-req">Hardware-Voraussetzung:</span></em> <span data-i18n="hw-scaler-req-desc">Dieses Feature wird nur auf Receivern mit ausreichender GPU-Rechenleistung freigeschaltet.</span></p>
+                        <p><span class="material-symbols-outlined inline-icon accent">lightbulb</span> <em><span data-i18n="hw-scaler-func">Funktionsweise:</span></em> <span data-i18n="hw-scaler-func-desc">Nutzt einen präzisen Integer-Scaling-Algorithmus (Pixel-Perfect-Modus) kombiniert mit einer optionalen, zuschaltbaren Scanline-Simulation, um Unschärfe-Artefakte moderner Panels zu eliminieren.</span></p>
+                        <p><span class="material-symbols-outlined inline-icon warning-text">warning</span> <em><span data-i18n="hw-scaler-req">Hardware-Voraussetzung:</span></em> <span data-i18n="hw-scaler-req-desc">Dieses Feature wird nur auf Receivern mit ausreichender GPU-Rechenleistung freigeschaltet.</span></p>
                     </div>
                 </li>
             </ul>
@@ -89,7 +89,7 @@
         <section class="card">
             <h2><span class="material-symbols-outlined icon">enhanced_encryption</span> <span data-i18n="sec-title">3. In-Stream Keystore-Update & Offline-Sicherheit</span></h2>
             <ul class="feature-list">
-                <li><strong data-i18n="sec-carousel">Globales Keystore-Karussell:</strong> <span data-i18n="sec-carousel-desc">Jeder DVB-C+ Transponder strahlt auf einer geschützten System-PID kontinuierlich den aktuellen, von NeoAudio (Kontakt: neoaudio@murena.io) signierten Master-Keystore aus. Der Receiver aktualisiert seine Sicherheitsdatenbank vollautomatisch und zu 100 % offline über das physische Kabelnetz.</span></li>
+                <li><strong data-i18n="sec-carousel">Globales Keystore-Karussell:</strong> <span data-i18n="sec-carousel-desc">Jeder DVB-C+ Transponder strahlt auf einer geschützten System-PID kontinuierlich den aktuellen, von NeoAudio signierten Master-Keystore aus. Der Receiver aktualisiert seine Sicherheitsdatenbank vollautomatisch und zu 100 % offline über das physische Kabelnetz.</span></li>
                 <li><strong data-i18n="sec-checksum">Mathematische Prüfziffer (Fallback):</strong> <span data-i18n="sec-checksum-desc">Offizielle Zertifikate enthalten eine integrierte Prüfziffer. Die mathematische Formel im OS Holo+ kann diese bei echten Zertifikaten immer erfolgreich auflösen, wodurch das Interface sofort als verifiziert gilt.</span></li>
                 <li><strong data-i18n="sec-window">30-Tage-Vertrauensfenster:</strong> <span data-i18n="sec-window-desc">Schlägt die Formel fehl und das Zertifikat ist unbekannt, läuft die Software für 30 Tage als Kulanz. Der Nutzer wird über diskrete System-Pop-ups gebeten, das Gerät kurzzeitig online zu synchronisieren. Nach 30 Tagen ohne Abgleich erfolgt die Herabstufung in den eingeschränkten Development-Modus.</span></li>
             </ul>
@@ -103,6 +103,20 @@
                 <div class="grid-item"><h3>.hac</h3><p data-i18n="cert-hac">256 Zeichen. Für globale Apps (.hap).</p></div>
                 <div class="grid-item"><h3>.hsc</h3><p data-i18n="cert-hsc">512 Zeichen. Zwingend erforderlich für System-Services mit tiefen Rechten.</p></div>
             </div>
+
+            <h3 class="sub-title" data-i18n="cert-code-title">Syntax-Aufbau einer Zertifikatsdatei</h3>
+            <pre><code>#Holo+ Application/OmniView/System Certificate
+#Distributed by NeoAudio on the 1st of June 2026 (gültig 4 Jahre)
+
+#Certificate Key:
+¡[256/512 Zeichen Schlüssel]!
+
+#Checksum:
+¡[32 Zeichen Zahl, mathematische Formel]!</code></pre>
+            <div class="nested-info">
+                <p><span class="material-symbols-outlined inline-icon accent">lightbulb</span> <strong data-i18n="cert-marker">Parser-Mechanik:</strong> <span data-i18n="cert-marker-desc">Das invertierte Ausrufezeichen <code>¡</code> dient dem OS-Kernel als absoluter Startpunkt für das Einlesen der Sicherheitsblöcke. Das standardmäßige <code>!</code> fungiert als Endpunkt. Alle Zeilen, die mit <code>#</code> beginnen, werden als Kommentar ignoriert.</span></p>
+            </div>
+
             <div class="callout alert">
                 <h4 data-i18n="cert-dev-title">Der Development-Modus (Unsigniert)</h4>
                 <p data-i18n="cert-dev-desc">Software ohne gültiges Zertifikat läuft in einer Sandbox ohne Systemzugriff, zeigt vor dem Start eine Warnung und trägt ein permanentes, transparentes Branding-Badge („Development OmniView Interface“ bzw. „Development Holo+ App“).</p>
@@ -112,37 +126,22 @@
         <section class="card">
             <h2><span class="material-symbols-outlined icon">tv_options_edit_channels</span> <span data-i18n="oip-title">5. Das OmniView-Interface (.oip)</span></h2>
             <div class="callout warning">
-                <p>⚠️ <strong><span data-i18n="oip-rest-title">Sicherheits-Restriktion:</span></strong> <span data-i18n="oip-rest-desc">Das OmniView-Interface ist ein reines, flüchtiges Anzeige- und Steuerungselement. Im Gegensatz zu globalen Apps ist es einem .oip-Paket auf Systemebene strengstens verboten, eigene Apps, Erweiterungen oder Systemdienste mitzuführen oder nachzuinstallieren. Es darf keinerlei dep-apps-Unterordner besitzen.</span></p>
+                <p><span class="material-symbols-outlined inline-icon warning-text">warning</span> <strong><span data-i18n="oip-rest-title">Sicherheits-Restriktion:</span></strong> <span data-i18n="oip-rest-desc">Das OmniView-Interface ist ein reines, flüchtiges Anzeige- und Steuerungselement. Im Gegensatz zu globalen Apps ist es einem .oip-Paket auf Systemebene strengstens verboten, eigene Apps, Erweiterungen oder Systemdienste mitzuführen oder nachzuinstallieren. Es darf keinerlei dep-apps-Unterordner besitzen.</span></p>
             </div>
-            <p>📁 <strong data-i18n="oip-schema">Interface-Namensschema:</strong> <code>[Sendername]_interface_[Version]_[TargetDevice].oip</code></p>
+            <p><span class="material-symbols-outlined inline-icon accent">folder</span> <strong data-i18n="oip-schema">Interface-Namensschema:</strong> <code>[Sendername]_interface_[Version]_[TargetDevice].oip</code></p>
             
             <h3 class="sub-title" data-i18n="oip-blueprint">Blueprint: Struktur eines OmniView-Interfaces (.oip)</h3>
-            <pre><code>📦 [Sendername]_interface_[Version]_[TargetDevice].oip
- ┣ 📄 infotainmentinfo.json      &lt;- Das Interface-Manifest
- ┣ 📄 certificate.hoc            &lt;- Das von NeoAudio verifizierte 256-Zeichen-Zertifikat
- ┣ 📄 index.html                 &lt;- Der definierte Startpunkt für das TV-Overlay
- ┣ 📂 deps                       &lt;- Ordner für skriptbasierte Code-Abhängigkeiten (z.B. UI-Bibliotheken, CSS)
- ┗ 📂 media_assets               &lt;- Lokale Grafiken, Kanallogos, Overlays, WebFonts</code></pre>
-
-            <h3 class="sub-title" data-i18n="oip-json">Spezifikation der infotainmentinfo.json</h3>
-            <pre><code>{
-  "dvb_c_plus_version": "2.7.0",
-  "sender_id": "DE-NRW-RETR0-01",
-  "sender_name": "RetroGaming TV",
-  "interface_system": "OmniView",
-  "app_version": "1.0.0",
-  "entrypoint": "index.html",
-  "certificate_path": "certificate.hoc",
-  "network_settings": { "internet_required": false },
-  "device_compatibility": { "target_device": "universal", "required_ram_mb": 64, "hardware_acceleration": "required" },
-  "dependencies": [{ "name": "holo_omniview_core", "source": "system" }],
-  "display_settings": { "resolution_target": "3840x2160", "layer": "overlay_above_video", "transparent_background": true, "initial_state": "minimized" }
-}</code></pre>
+            <pre><code><span class="material-symbols-outlined blueprint-icon">inventory_2</span> [Sendername]_interface_[Version]_[TargetDevice].oip
+ ┣ <span class="material-symbols-outlined blueprint-icon">description</span> infotainmentinfo.json      &lt;- Das Interface-Manifest
+ ┣ <span class="material-symbols-outlined blueprint-icon">description</span> certificate.hoc            &lt;- Das von NeoAudio verifizierte 256-Zeichen-Zertifikat
+ ┣ <span class="material-symbols-outlined blueprint-icon">description</span> index.html                 &lt;- Der definierte Startpunkt für das TV-Overlay
+ ┣ <span class="material-symbols-outlined blueprint-icon">folder</span> deps                       &lt;- Ordner für skriptbasierte Code-Abhängigkeiten
+ ┗ <span class="material-symbols-outlined blueprint-icon">folder</span> media_assets               &lt;- Lokale Grafiken, Kanallogos, Overlays</code></pre>
         </section>
 
         <section class="card">
             <h2><span class="material-symbols-outlined icon">apps</span> <span data-i18n="hap-title">6. Globale Apps & Kernel-API Struktur (.hap)</span></h2>
-            <p>📁 <strong data-i18n="hap-schema">Paket-Namensschema:</strong> <code>com.[Entwickler].[Typ].[Appname]_[Version]_[TargetDevice].hap</code></p>
+            <p><span class="material-symbols-outlined inline-icon accent">folder</span> <strong data-i18n="hap-schema">Paket-Namensschema:</strong> <code>com.[Entwickler].[Typ].[Appname]_[Version]_[TargetDevice].hap</code></p>
             
             <p data-i18n="hap-desc">Um Systemsicherheit und schlanke Pakete zu vereinen, unterscheidet Holo+ strikt zwischen drei Abhängigkeitstypen:</p>
             <ol class="api-types">
@@ -152,37 +151,15 @@
             </ol>
 
             <h3 class="sub-title" data-i18n="hap-blueprint">Blueprint: Struktur einer Holo+ App (.hap)</h3>
-            <pre><code>📦 com.developer.type.appname_1.0.0_universal.hap
- ┣ 📄 appinfo.json               &lt;- Das App-Manifest (Spezifikation siehe unten)
- ┣ 📄 certificate.hac            &lt;- Das 256-Zeichen App-Zertifikat
- ┣ 📄 system_auth.hsc            &lt;- (NUR bei type "system") Das 512-Zeichen System-Zertifikat
- ┣ 📄 main.html                  &lt;- Der definierte Startpunkt im Chromium-Core
- ┣ 📂 deps                       &lt;- Ordner für AUSSCHLIESSLICH selbstgeladene, proprietäre Code-Abhängigkeiten
- ┃ ┗ 📄 custom-slider.js         &lt;- Beispiel für eine selbstgeladene Entwickler-Dependency
- ┣ 📂 dep-apps                   &lt;- Ordner für zwingend erforderliche Dependency-Apps / System-Services
- ┗ 📂 media_assets               &lt;- Lokale Grafiken, Fonts, Audio-Assets</code></pre>
-
-            <h3 class="sub-title" data-i18n="hap-json">Spezifikation der appinfo.json</h3>
-            <pre><code>{
-  "holo_os_version": "2.7.0",
-  "package_id": "com.developer.release.mediacenter",
-  "app_name": "Holo+ Media Center",
-  "app_type": "release",
-  "version": "1.0.0",
-  "runtime": {
-    "engine": "chromium_embedded",
-    "entrypoint": "main.html",
-    "mandatory_user_agent": "Mozilla/5.0 (Linux; Holo+ OS; Receiver) Chromium/120.0 DVB-C+ AppEngine/1.0"
-  },
-  "security": { "certificate_file": "certificate.hac", "system_certificate_file": null },
-  "dependencies": {
-    "system_core_apis": [{ "api_name": "holo-app-core", "source": "system", "permissions": ["tuner.status.read", "tuner.stream.control", "wifi.status.read", "wifi.signal.strength"] }],
-    "shared_system_frameworks": [{ "name": "react", "source": "system", "version": "^18.2.0" }, { "name": "enact", "source": "system", "version": "^4.0.0" }, { "name": "hls.js", "source": "system", "version": "^1.4.0" }],
-    "custom_local_dependencies": [{ "name": "custom-slider", "source": "package", "local_path": "deps/custom-slider.js", "version": "3.1.2" }],
-    "required_apps": [{ "package_id": "com.developer.system.corehelper", "type": "system", "local_path": "dep-apps/com.developer.system.corehelper_1.0.0_universal.hap" }]
-  },
-  "hardware": { "target_device": "universal", "min_ram_mb": 256, "require_gpu_acceleration": true }
-}</code></pre>
+            <pre><code><span class="material-symbols-outlined blueprint-icon">inventory_2</span> com.developer.type.appname_1.0.0_universal.hap
+ ┣ <span class="material-symbols-outlined blueprint-icon">description</span> appinfo.json               &lt;- Das App-Manifest
+ ┣ <span class="material-symbols-outlined blueprint-icon">description</span> certificate.hac            &lt;- Das 256-Zeichen App-Zertifikat
+ ┣ <span class="material-symbols-outlined blueprint-icon">description</span> system_auth.hsc            &lt;- (NUR bei type "system") Das 512-Zeichen System-Zertifikat
+ ┣ <span class="material-symbols-outlined blueprint-icon">description</span> main.html                  &lt;- Der definierte Startpunkt im Chromium-Core
+ ┣ <span class="material-symbols-outlined blueprint-icon">folder</span> deps                       &lt;- Ordner für AUSSCHLIESSLICH selbstgeladene Code-Abhängigkeiten
+ ┃ ┗ <span class="material-symbols-outlined blueprint-icon">description</span> custom-slider.js         &lt;- Beispiel für eine selbstgeladene Entwickler-Dependency
+ ┣ <span class="material-symbols-outlined blueprint-icon">folder</span> dep-apps                   &lt;- Ordner für zwingend erforderliche Dependency-Apps / System-Services
+ ┗ <span class="material-symbols-outlined blueprint-icon">folder</span> media_assets               &lt;- Lokale Grafiken, Fonts, Audio-Assets</code></pre>
         </section>
 
         <section class="card">
